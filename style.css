@@ -13,6 +13,7 @@
     padding: 10px 0px 10px 80px;
     border-bottom: 1px  solid black;
     font-size: 40px;
+    background-color: rgb(236, 242, 250);
 }
 
 
@@ -43,6 +44,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    padding:4px;
     background-color: black;
     width:400px;
     height:400px;
@@ -58,7 +60,7 @@
 }
 
 .square{
-    background-color: rgb(228, 196, 196);
+    background-color: rgb(236, 242, 250);
 }
 
 .restartBtn{
