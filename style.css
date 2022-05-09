@@ -24,6 +24,11 @@
     margin-bottom: 20px;
 }
 
+/* .selectionBtn{
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 .selectionText{
     display:block;
 }
@@ -31,9 +36,7 @@
 
 .xSelectionBtn,
 .oSelectionBtn{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
 }
 
 .boardGame{
