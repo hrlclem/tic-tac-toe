@@ -1,21 +1,24 @@
 let boardArray = [];
 
 
-//Make player constructor for player object
+//Make player constructor for player object or FACTORY
 let player = {
       name: "",
-      selectedSign : "",
+      marker : "",
       playerPlays : []
 }
 
 // Modules
-signSelectionModule();      // Choose a sign between X and 0;
+markerSelectionModule();    // Choose a sign between X and 0;
 gameplayModule();           // Player select a square, actions occur (render, result...)
+gameboardUpdateModule();    // Update and display choice on gameboard
 currentPlayerModule();      // Checks which player is playing now
+takenSpotsCheckModule();    // Check if player selection is really empty or already taken
 
 
 renderModule();             // Roles the play
-resultModule();             // Check current play and compare to winPossibilities
+resultModule();             // Check current play and compare to winPossibilities, 
+                              // gives result (player win or tie), popup appears and offer to restart
 restartModule();            // Restart the game
 
 
