@@ -8,6 +8,21 @@ let player = {
       playerPlays : []
 }
 
+// Modules
+signSelectionModule();      // Choose a sign between X and 0;
+gameplayModule();           // Player select a square, actions occur (render, result...)
+currentPlayerModule();      // Checks which player is playing now
+
+
+renderModule();             // Roles the play
+resultModule();             // Check current play and compare to winPossibilities
+restartModule();            // Restart the game
+
+
+
+
+
+
 let winPossibilities = [[0, 1, 2],
                         [3, 4, 5],
                         [6, 7, 8],
