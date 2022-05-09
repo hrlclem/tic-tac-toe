@@ -1,12 +1,17 @@
 * {
     margin:0;
     padding:0;
-    word-break:break-all;
+    word-break:break-word;
     font-family: 'Lato', sans-serif;
 }
 
+html, 
+body{
+    width: 100%;
+    height: 100%;
+}
+
 .header{
-    display:block;
     font-size: 20px;
     padding: 10px 0px 10px 40px;
     border-bottom: 1px  solid black;
@@ -15,13 +20,30 @@
 .gameDisplay{
     display:flex;   
     margin-top: 20px;
+    bottom:0;
     justify-content: center;
-    align-items: center;
 }
 
 .selectionText, 
 .selectionBtn{
     display: block;
+}
+
+.boardGame{
+    display:grid;
+    grid-template-columns: repeat(3, 330px);
+    grid-template-rows: repeat(3, 33%);
+    gap:0;
+    width:50%;
+    height:50%;
+    background-color: black;
+}
+
+.square{
+    gap:0;
+    width:20px;
+    height:20px;
+    background-color: rgb(163, 60, 60);
 }
 
 
