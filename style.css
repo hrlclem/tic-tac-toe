@@ -5,6 +5,8 @@
     font-family: 'Lato', sans-serif;
 }
 
+
+/* HEADER */
 .header{
     font-size: 20px;
     width:100%;
@@ -13,26 +15,17 @@
     font-size: 40px;
 }
 
+
+/* MAIN */
 .gameDisplay{
     display:flex;  
     justify-content: center; 
     margin-top: 20px;
-    
 }
 
 .itemSelection{
     margin-bottom: 20px;
 }
-
-/* .selectionBtn{
-    margin-left: auto;
-    margin-right: auto;
-} */
-
-.selectionText{
-    display:block;
-}
-
 
 .xSelectionBtn,
 .oSelectionBtn{
@@ -73,6 +66,8 @@
 }
 
 
+
+/* FOOTER */
 .footer {
     font-family: arial;
     color: #212121;
