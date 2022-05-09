@@ -5,6 +5,26 @@
     font-family: 'Lato', sans-serif;
 }
 
+.header{
+    display:block;
+    font-size: 20px;
+    padding: 10px 0px 10px 40px;
+    border-bottom: 1px  solid black;
+}
+
+.gameDisplay{
+    display:flex;   
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectionText, 
+.selectionBtn{
+    display: block;
+}
+
+
 .footer {
     font-family: arial;
     color: #212121;
