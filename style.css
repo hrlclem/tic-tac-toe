@@ -20,14 +20,23 @@ body{
 .gameDisplay{
     display:flex;   
     margin-top: 20px;
-    bottom:0;
     justify-content: center;
 }
 
-.selectionText, 
-.selectionBtn{
+.itemSelection{
     display: block;
+    justify-content: center;
 }
+
+.selectionText{
+    display: block;
+    justify-content: center;
+}
+.selectionBtn{
+    display: flex;
+    justify-content: center;
+}
+
 
 .boardGame{
     display:grid;
