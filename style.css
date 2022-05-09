@@ -18,24 +18,31 @@
 
 /* MAIN */
 .gameDisplay{
-    display:flex;  
-    justify-content: center; 
+    display:block;  
     margin-top: 20px;
 }
 
-.itemSelection{
-    margin-bottom: 20px;
+.selectionText{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
-.xSelectionBtn,
-.oSelectionBtn{
-    display: inline-block;
+.itemSelection{
+    display:flex;
+    justify-content: center;
+}
+
+.selectBtn{
+    padding: 3px 10px 3px 10px;
+    margin:10px;
 }
 
 .boardGame{
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     background-color: black;
     width:400px;
     height:400px;
