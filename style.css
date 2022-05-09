@@ -5,46 +5,44 @@
     font-family: 'Lato', sans-serif;
 }
 
-html, 
-body{
-    width: 100%;
-    height: 100%;
-}
-
 .header{
     font-size: 20px;
-    padding: 10px 0px 10px 40px;
+    width:100%;
+    padding: 10px 0px 10px 80px;
     border-bottom: 1px  solid black;
+    font-size: 40px;
 }
 
 .gameDisplay{
     display:flex;  
     justify-content: center; 
     margin-top: 20px;
-
+    
 }
 
 .itemSelection{
     margin-bottom: 20px;
 }
 
-.selectionBtn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.selectionText{
+    display:block;
 }
 
-.xSelectionBtn{
+
+.xSelectionBtn,
+.oSelectionBtn{
     display: flex;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .boardGame{
     display: flex;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     background-color: black;
-    width:100%;
-    height:70%;
+    width:400px;
+    height:400px;
 }
 
 .TicTacToeField{
@@ -52,14 +50,23 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap:2px;
-    width:33%;
-    height:33%;
+    width:100%;
+    height:100%;
 }
 
 .square{
-    width:98%;
-    height:98%;
     background-color: rgb(163, 60, 60);
+}
+
+.restartBtn{
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 0;
+    padding: 8px 40px 8px 40px;
+    font-size: 20px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
