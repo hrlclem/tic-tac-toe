@@ -2,14 +2,20 @@ let boardArray = [];
 
 
 //Make player constructor for player object or FACTORY
-const player = () => {
-      let name = "";
-      let market = "";
-      let playerMoves = [];
+const player = (sign) => {
+      return{
+            signMarker : sign,
+      }
 };
 
+let playerSign = player("X");
+
+console.log(player("X"));
+
 // Modules
-markerSelectionMod();    // Choose a sign between X and 0;
+const markerSelectionMod = (() => {
+      
+})();    // Choose a sign between X and 0;
 gameplayMod();           // Player select a square, actions occur (render, result...)
 updateGameboardMod();    // Update and display choice on gameboard
 currentPlayerMod();      // Checks which player is playing now
