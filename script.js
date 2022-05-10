@@ -14,7 +14,6 @@ gameplayMod();           // Player select a square, actions occur (render, resul
 updateGameboardMod();    // Update and display choice on gameboard
 currentPlayerMod();      // Checks which player is playing now
 takenSpotsCheckMod();    // Check if player selection is really empty or already taken
-
 renderMod();             // Roles the play
 resultMod();             // Check current play and compare to winPossibilities, 
                               // gives result (player win or tie), popup appears and offer to restart
