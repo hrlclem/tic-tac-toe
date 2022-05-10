@@ -4,11 +4,14 @@ let boardArray = [];
 
 
 //Make player constructor for player object or FACTORY
-const player = (sign) => {
+const player = () => {
       return{
-            signMarker : sign,
+            player : 1, 
+            signMarker : "X",
       }
 };
+
+
 
 
 const xMarkerBtn = document.getElementsByClassName("xMarker");
@@ -17,16 +20,21 @@ let playerMarker;
 
 xMarkerBtn.addEventListener("click",console.log(34));
 
-// Modules
-markerSelectionMod()     // Choose a sign between X and 0;
-gameplayMod();           // Player select a square, actions occur (render, result...)
+gameplaySelectionMod();  // User choose between 1VBot or 1V1
+markerSelectionMod()     // Player 1 choose a sign between X and 0;
+
+// Modules 1VBot
+currentPlayerMod();      // Checks which player is playing now (Player 1 or Player 2, Player 1 or Bot)
+gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
+takenSpotsCheckMod();    // Check if player selection is really empty or already taken (+ list of all taken + list of all available)
+botMoveMod();            // It's bot's turn: bot choose a square
 updateGameboardMod();    // Update and display choice on gameboard
-currentPlayerMod();      // Checks which player is playing now
-takenSpotsCheckMod();    // Check if player selection is really empty or already taken
 renderMod();             // Roles the play
 resultMod();             // Check current play and compare to winPossibilities, 
                               // gives result (player win or tie), popup appears and offer to restart
 restartMod();            // Restart the game
+
+
 
 
 
