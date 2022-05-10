@@ -2,11 +2,11 @@ let boardArray = [];
 
 
 //Make player constructor for player object or FACTORY
-let player = {
-      name: "",
-      marker : "",
-      playerPlays : []
-}
+const player = () => {
+      let name = "";
+      let market = "";
+      let playerMoves = [];
+};
 
 // Modules
 markerSelectionMod();    // Choose a sign between X and 0;
