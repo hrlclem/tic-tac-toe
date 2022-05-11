@@ -8,7 +8,7 @@ const playerCreation = (name, marker, bot) => {
 // Game setup
 let boardArray = [];
 let winner = null;
-let winPossibilities = [[1, 1, 2],
+let winPossibilities = [[0, 1, 2],
                         [3, 4, 5],
                         [6, 7, 8],
                         [0, 3, 6],
