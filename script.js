@@ -28,6 +28,8 @@ const pvpSelectionMod = (function () {
 // markerSelectionMod()     // Player 1 choose a sign between X and 0;
 
 
+
+
 // currentPlayerMod();      // Checks which player is playing now (Player 1 or Player 2, Player 1 or Bot)
 // gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
 // takenSpotsCheckMod();    // Check if player selection is really empty or already taken (+ list of all taken + list of all available)
