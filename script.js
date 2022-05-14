@@ -77,8 +77,7 @@ function checkForWin(winArray, playBoardArray) {
 
       for (i = 0; i < winArray.length; i++) {
             for (k = 0; k < winArray[i].length; k++) {
-                  for (j = 0; j < playBoardArray[j].length; j++) {
-                        console.log("yes");
+                  for (j = 0; j < playBoardArray.length; j++) {
                         if (playBoardArray[j] == winArray[i][k]) {
                               buffer.push(playBoardArray[j]);
                               if(buffer.length == 3){
@@ -86,6 +85,8 @@ function checkForWin(winArray, playBoardArray) {
                                     return;
                               }
                               k++;
+                              console.log("buffer " + buffer);
+                              console.log("play1: " + playBoardArray);
                         }
                   }
             }
