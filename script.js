@@ -2,7 +2,11 @@ const gameBoard = (() => {
 
 // Create player
 const playerCreation = (name, marker, bot, turn) => {
-      return{ name, marker, bot, turn}
+      return{ 
+            name, 
+            marker, 
+            bot, 
+            turn}
 };
 
 const gameStatus = (() => {
@@ -15,10 +19,6 @@ const gameStatus = (() => {
             winner
       };
 })();
-
-// // Game setup
-// let boardArray = [];
-// let winner = null;
 
 // Possible wins
 let winPossibilities = [[0, 1, 2],
@@ -34,17 +34,11 @@ let winPossibilities = [[0, 1, 2],
 const player1 = playerCreation('player1', 'X', false, true);
 const player2 = playerCreation('player2', '0', false, false);
 
-// const pvpSelectionMod = (function () {
-
-// }) => 
-
-// gameplaySelectionMod();  // User choose between 1VBot or 1V1
-// markerSelectionMod()     // Player 1 choose a sign between X and 0;
 
 
 
 
-// currentPlayerMod();      // Checks which player is playing now (Player 1 or Player 2, Player 1 or Bot)
+
 // gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
 // takenSpotsCheckMod();    // Check if player selection is really empty or already taken (+ list of all taken + list of all available)
 // botMoveMod();            // It's bot's turn: bot choose a square
@@ -57,4 +51,19 @@ const player2 = playerCreation('player2', '0', false, false);
 
 })();
 
+
+
+
+// PENDING FEATURES
+// gameplaySelectionMod();  // User choose between 1VBot or 1V1
+// markerSelectionMod()     // Player 1 choose a sign between X and 0;
+// currentPlayerMod();      // Checks which player is playing now (Player 1 or Player 2, Player 1 or Bot)
+
+
+
+
+
+// // Game setup
+// let boardArray = [];
+// let winner = null;
 
