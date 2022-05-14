@@ -45,7 +45,7 @@ const playerMove = (() => {
                               // Update board Array
                               gameStatus.boardArray.push(Number(e.target.id));
                               // Check for winning move
-                              checkForWin();
+                              checkForWin(winPossibilities, gameStatus.boardArray);
                               // Change DOM
                               e.target.textContent = player1.marker;
                               // // Change player's turn
@@ -63,9 +63,9 @@ const playerMove = (() => {
       });
 })();
 
-const checkForWin = (() => {
+const checkForWin = ((winArray, currentBoardArray) => {
       function gameMatch(winArray, currentBoardArray){
-            return currentBoardArray.array(value => {
+            return currentBoardArray.every(value => {
                   return winArray.includes(value);
             });
       }
