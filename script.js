@@ -1,8 +1,8 @@
 const gameBoard = (() => {
 
 // Create player
-const playerCreation = (name, marker, bot) => {
-      return{ name, marker, bot}
+const playerCreation = (name, marker, bot, turn) => {
+      return{ name, marker, botn turn}
 };
 
 // Game setup
@@ -17,7 +17,8 @@ let winPossibilities = [[0, 1, 2],
                         [0, 4, 8],
                         [2, 4, 6]];
 
-const player1 = playerCreation()
+const player1 = playerCreation('player1', 'X', false, true);
+const player2 = playerCreation('player2', '0', false, false);
 
 const pvpSelectionMod = (function () {
 
