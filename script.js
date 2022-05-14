@@ -38,15 +38,38 @@ const playerMove = (() => {
       const square = document.querySelectorAll('.square');
       square.forEach ( square => {
             square.addEventListener("click", e => {
-                  console.log(33);
+                  // For player 1 move
+                  if (  player1.turn == true && 
+                        gameStatus.winner == null && 
+                        e.target.textContent == "" ) {
+                              console.log(33);
+                              // Update board Array
+
+                              // Check for winning move
+
+                              // Change DOM
+                              e.target.textContent = player1.marker;
+                              // Change player's turn
+
+                              // Adds turn++;
+                              gameStatus.turns++;
+                  }
+                  // For player 2 move
+                  // else if ()
+                  // {
+
+                  // }
             });
       });
+})();
+
+const checkForWin = (() => {
+
 })();
 
 
 // gameStarts();            // Set up the game
 // gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
-// takenSpotsCheckMod();    // Check if player selection is really empty or already taken (+ list of all taken + list of all available)
 // botMoveMod();            // It's bot's turn: bot choose a square
 // updateGameboardMod();    // Update and display choice on gameboard
 // renderMod();             // Roles the play
