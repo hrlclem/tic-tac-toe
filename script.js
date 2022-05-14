@@ -35,10 +35,13 @@ const player1 = playerCreation('player1', 'X', false, true);
 const player2 = playerCreation('player2', '0', false, false);
 
 
+const playerMove = (() => {
+      const square = document.querySelectorAll('.square');
+      square.forEach
+})();
 
 
-
-
+// gameStarts();            // Set up the game
 // gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
 // takenSpotsCheckMod();    // Check if player selection is really empty or already taken (+ list of all taken + list of all available)
 // botMoveMod();            // It's bot's turn: bot choose a square
