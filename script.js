@@ -2,12 +2,25 @@ const gameBoard = (() => {
 
 // Create player
 const playerCreation = (name, marker, bot, turn) => {
-      return{ name, marker, botn turn}
+      return{ name, marker, bot, turn}
 };
 
-// Game setup
-let boardArray = [];
-let winner = null;
+const gameStatus = (() => {
+      let turns = 0;
+      let boardArray = [];
+      let winner = null;
+      return{
+            turns, 
+            boardArray, 
+            winner
+      };
+})();
+
+// // Game setup
+// let boardArray = [];
+// let winner = null;
+
+// Possible wins
 let winPossibilities = [[0, 1, 2],
                         [3, 4, 5],
                         [6, 7, 8],
@@ -17,13 +30,13 @@ let winPossibilities = [[0, 1, 2],
                         [0, 4, 8],
                         [2, 4, 6]];
 
+// Create player for regular game
 const player1 = playerCreation('player1', 'X', false, true);
 const player2 = playerCreation('player2', '0', false, false);
 
-const pvpSelectionMod = (function () {
+// const pvpSelectionMod = (function () {
 
-}) => 
-
+// }) => 
 
 // gameplaySelectionMod();  // User choose between 1VBot or 1V1
 // markerSelectionMod()     // Player 1 choose a sign between X and 0;
