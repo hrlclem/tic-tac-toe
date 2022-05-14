@@ -43,15 +43,15 @@ const playerMove = (() => {
                         gameStatus.winner == null && 
                         e.target.textContent == "" ) {
                               // Update board Array
-
+                              gameStatus.boardArray.push(Number(e.target.id));
                               // Check for winning move
-
+                              checkForWin();
                               // Change DOM
                               e.target.textContent = player1.marker;
-                              // Change player's turn
-                              player1.turn = false;
-                              player2.turn = true;
-                              // Adds turn++;
+                              // // Change player's turn
+                              // player1.turn = false;
+                              // player2.turn = true;
+                              // // Adds turn++;
                               gameStatus.turns++;
                   }
                   // For player 2 move
@@ -64,8 +64,16 @@ const playerMove = (() => {
 })();
 
 const checkForWin = (() => {
+      function gameMatch(winArray, currentBoardArray){
+            return currentBoardArray.array(value => {
+                  return winArray.includes(value);
+            });
+      }
+
       for (i = 0; i < winPossibilities.length; i++) {
-            if (winPossibilities[i] == )
+            if (gameMatch(winPossibilities[i], gameStatus.boardArray) == true){
+                  console.log('you win!');
+            }
       }
 })();
 
