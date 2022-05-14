@@ -44,6 +44,7 @@ const playerMove = (() => {
                         e.target.textContent == "" ) {
                               // Update board Array
                               gameStatus.boardArray.push(Number(e.target.id));
+                              console.log(gameStatus.boardArray);
                               // Check for winning move
                               checkForWin(winPossibilities, gameStatus.boardArray);
                               // Change DOM
@@ -59,23 +60,28 @@ const playerMove = (() => {
                   // {
 
                   // }
+                  // else 
+                  // {
+                  //    return
+                  //  }
             });
       });
 })();
 
-const checkForWin = ((winArray, currentBoardArray) => {
-      function gameMatch(winArray, currentBoardArray){
-            return currentBoardArray.every(value => {
-                  return winArray.includes(value);
-            });
+function checkForWin(winArray, currentBoardArray) {
+
+      let buffer = [];
+
+      for (j = 0; j < winArray[j].length; j++){
+
+            for (i = 0; i < winArray[i].length; i++) {
+                  if(winArray[i] == )
+            }
+
+            buffer = [];
       }
 
-      for (i = 0; i < winPossibilities.length; i++) {
-            if (gameMatch(winPossibilities[i], gameStatus.boardArray) == true){
-                  console.log('you win!');
-            }
-      }
-})();
+};
 
 
 // gameStarts();            // Set up the game
