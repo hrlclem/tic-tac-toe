@@ -41,26 +41,39 @@ const playerMove = (() => {
       square.forEach ( square => {
             square.addEventListener("click", e => {
                   // For player 1 move
-                  if (  player1.turn == true && 
-                        gameStatus.winner == null && 
-                        e.target.textContent == "" ) {
-                              // Update board Array
-                              gameStatus.boardArray1.push(Number(e.target.id));
-                              // Check for winning move
-                              checkForWin(winPossibilities, gameStatus.boardArray1);
-                              // Change DOM
-                              e.target.textContent = player1.marker;
-                              // // Change player's turn
-                              // player1.turn = false;
-                              // player2.turn = true;
-                              // // Adds turn++;
-                              gameStatus.turns++;
+                  if (        player1.turn == true && 
+                              gameStatus.winner == null && 
+                              e.target.textContent == "" ) {
+                                    // Update board Array
+                                    gameStatus.boardArray1.push(Number(e.target.id));
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray1);
+                                    if (gameStatus.winner == true) {console.log('Player 1 : you win');}
+                                    // Change DOM
+                                    e.target.textContent = player1.marker;
+                                    // // Change player's turn
+                                    player1.turn = false;
+                                    player2.turn = true;
+                                    // // Adds turn++;
+                                    gameStatus.turns++;
                   }
                   // For player 2 move
-                  // else if ()
-                  // {
-
-                  // }
+                  else if (   player2.turn == true && 
+                              gameStatus.winner == null && 
+                              e.target.textContent == "" ) {
+                                    // Update board Array
+                                    gameStatus.boardArray2.push(Number(e.target.id));
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray2);
+                                    if (gameStatus.winner == true) {console.log('Player 2 : you win');}
+                                    // Change DOM
+                                    e.target.textContent = player2.marker;
+                                    // // Change player's turn
+                                    player1.turn = true;
+                                    player2.turn = false;
+                                    // // Adds turn++;
+                                    gameStatus.turns++;
+                  }
                   else 
                   {
                      return
@@ -81,14 +94,13 @@ function checkForWin(winArray, playBoardArray) {
                         if (playBoardArray[j] == winArray[i][k]) {
                               buffer.push(playBoardArray[j]);
                               if(buffer.length == 3){
-                                    console.log('you win');
-                                    return;
+                                    gameStatus.winner == true;
+                                    return ;
                               }
                               k++;
-                              console.log("buffer " + buffer);
-                              console.log("play1: " + playBoardArray);
                         }
                   }
+
             }
             buffer = [];
       }
