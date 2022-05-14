@@ -34,10 +34,13 @@ let winPossibilities = [[0, 1, 2],
 const player1 = playerCreation('player1', 'X', false, true);
 const player2 = playerCreation('player2', '0', false, false);
 
-
 const playerMove = (() => {
       const square = document.querySelectorAll('.square');
-      square.forEach
+      square.forEach ( square => {
+            square.addEventListener("click", e => {
+                  console.log(33);
+            });
+      });
 })();
 
 
