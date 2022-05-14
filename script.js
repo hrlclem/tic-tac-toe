@@ -42,7 +42,6 @@ const playerMove = (() => {
                   if (  player1.turn == true && 
                         gameStatus.winner == null && 
                         e.target.textContent == "" ) {
-                              console.log(33);
                               // Update board Array
 
                               // Check for winning move
@@ -50,7 +49,8 @@ const playerMove = (() => {
                               // Change DOM
                               e.target.textContent = player1.marker;
                               // Change player's turn
-
+                              player1.turn = false;
+                              player2.turn = true;
                               // Adds turn++;
                               gameStatus.turns++;
                   }
@@ -64,7 +64,9 @@ const playerMove = (() => {
 })();
 
 const checkForWin = (() => {
-
+      for (i = 0; i < winPossibilities.length; i++) {
+            if (winPossibilities[i] == )
+      }
 })();
 
 
