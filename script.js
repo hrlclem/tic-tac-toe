@@ -11,11 +11,13 @@ const playerCreation = (name, marker, bot, turn) => {
 
 const gameStatus = (() => {
       let turns = 0;
-      let boardArray = [];
+      let boardArray1 = [];
+      let boardArray2 = [];
       let winner = null;
       return{
             turns, 
-            boardArray, 
+            boardArray1, 
+            boardArray2, 
             winner
       };
 })();
@@ -43,10 +45,10 @@ const playerMove = (() => {
                         gameStatus.winner == null && 
                         e.target.textContent == "" ) {
                               // Update board Array
-                              gameStatus.boardArray.push(Number(e.target.id));
-                              console.log(gameStatus.boardArray);
+                              gameStatus.boardArray1.push(Number(e.target.id));
+                              console.log(gameStatus.boardArray1);
                               // Check for winning move
-                              checkForWin(winPossibilities, gameStatus.boardArray);
+                              checkForWin(winPossibilities, gameStatus.boardArray1);
                               // Change DOM
                               e.target.textContent = player1.marker;
                               // // Change player's turn
@@ -60,28 +62,28 @@ const playerMove = (() => {
                   // {
 
                   // }
-                  // else 
-                  // {
-                  //    return
-                  //  }
+                  else 
+                  {
+                     return
+                   }
             });
       });
 })();
 
-function checkForWin(winArray, currentBoardArray) {
+// function checkForWin(winArray, currentBoardArray) {
 
-      let buffer = [];
+//       let buffer = [];
 
-      for (j = 0; j < winArray[j].length; j++){
+//       for (j = 0; j < winArray[j].length; j++){
 
-            for (i = 0; i < winArray[i].length; i++) {
-                  if(winArray[i] == )
-            }
+//             for (i = 0; i < winArray[i].length; i++) {
+//                   if(winArray[i] == )
+//             }
 
-            buffer = [];
-      }
+//             buffer = [];
+//       }
 
-};
+// };
 
 
 // gameStarts();            // Set up the game
