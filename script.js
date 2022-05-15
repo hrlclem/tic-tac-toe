@@ -83,17 +83,6 @@ const playerMove = (() => {
 })();
 
 
-// Playgame function
-
-// gameStarts();            // Set up the game
-// gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
-// botMoveMod();            // It's bot's turn: bot choose a square
-// updateGameboardMod();    // Update and display choice on gameboard
-// renderMod();             // Roles the play
-// resultMod();             // Check current play and compare to winPossibilities, 
-//                               // gives result (player win or tie), popup appears and offer to restart
-// restartMod();            // Restart the game
-
 
 
 function checkForWin(winArray, playBoardArray) {
@@ -136,8 +125,8 @@ function checkForWin(winArray, playBoardArray) {
 
 
 
-      const restartBtn = document.querySelector('.restartBtn');
-      restartBtn.addEventListener("click", restartMod);
+const restartBtn = document.querySelector('.restartBtn');
+restartBtn.addEventListener("click", restartMod);
 
 
 
@@ -172,10 +161,6 @@ function restartMod() {
 
 
 
-
-
-
 // PENDING FEATURES
 // gameplaySelectionMod();  // User choose between 1VBot or 1V1
 // markerSelectionMod()     // Player 1 choose a sign between X and 0;
-// currentPlayerMod();      // Checks which player is playing now (Player 1 or Player 2, Player 1 or Bot)
