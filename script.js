@@ -139,8 +139,6 @@ function checkForWin(winArray, playBoardArray) {
       const restartBtn = document.getElementsByClassName('.restartBtn')
       restartBtn.addEventListener("click", restartMod);
 
-      
-
 function restartMod() {
       const square = document.querySelectorAll('.square');
       square.forEach(sq => {
