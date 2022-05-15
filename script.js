@@ -78,6 +78,7 @@ const playerMove = (() => {
                    }
             });
       });
+      return;
 })();
 
 
@@ -110,6 +111,7 @@ function checkForWin(winArray, playBoardArray) {
             }
             buffer = [];
       }
+      return;
 };
 
 
