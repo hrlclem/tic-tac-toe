@@ -72,26 +72,44 @@ const playerMove = (() => {
 
 
 function checkForWin(winArray, playBoardArray) {
-
       let buffer = [];
 
       for (i = 0; i < winArray.length; i++) {
-            for (k = 0; k < winArray[i].length; k++) {
-                  for (j = 0; j < playBoardArray.length; j++) {
-                        if (playBoardArray[j] == winArray[i][k]) {
-                              buffer.push(playBoardArray[j]);
-                              if(buffer.length == 3){
-                                    console.log('you win');
-                                    return;
-                              }
-                              k++;
-                        }
+            for (k = 0; i < winArray[i].length; i++) {
+                  if (playBoardArray.indexOf(winArray[i][k]) > 1) {
+                        buffer.push(winArray[i][k]);
+                  };
+                  if (buffer.length == 3) {
+                        console.log("you win!");
+                        return
                   }
-
             }
             buffer = [];
       }
 };
+
+// // FIRST VERSIION
+// function checkForWin(winArray, playBoardArray) {
+
+//       let buffer = [];
+
+//       for (i = 0; i < winArray.length; i++) {
+//             for (k = 0; k < winArray[i].length; k++) {
+//                   for (j = 0; j < playBoardArray.length; j++) {
+//                         if (playBoardArray[j] == winArray[i][k]) {
+//                               buffer.push(playBoardArray[j]);
+//                               if(buffer.length == 3){
+//                                     console.log('you win');
+//                                     return;
+//                               }
+//                               k++;
+//                         }
+//                   }
+
+//             }
+//             buffer = [];
+//       }
+// };
 
 
 
