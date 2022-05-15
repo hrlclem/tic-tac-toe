@@ -35,6 +35,7 @@ let winPossibilities = [[0, 1, 2],
 // Create player for regular game
 const player1 = playerCreation('player1', 'X', false, true);
 const player2 = playerCreation('player2', '0', false, false);
+let tie;
 
 const playerMove = (() => {
       const square = document.querySelectorAll('.square');
@@ -72,21 +73,27 @@ const playerMove = (() => {
                               // // Adds turn++;
                               gameStatus.turns++;
                   }
-                  else if (gameStatus.winner == null && 
-                        gameStatus.turns == 8 ) {
-                              // Process for tie
-                              console.log("it's a tie!");
-                  }
                   else 
                   {
                      return;
                   }
-                  console.log("turns: " + gameStatus.turns);
-                  console.log("winner: " + gameStatus.winner);
             });
       });
       return;
 })();
+
+
+// Playgame function
+restartMod();
+// gameStarts();            // Set up the game
+// gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
+// botMoveMod();            // It's bot's turn: bot choose a square
+// updateGameboardMod();    // Update and display choice on gameboard
+// renderMod();             // Roles the play
+// resultMod();             // Check current play and compare to winPossibilities, 
+//                               // gives result (player win or tie), popup appears and offer to restart
+// restartMod();            // Restart the game
+
 
 
 function checkForWin(winArray, playBoardArray) {
@@ -109,6 +116,15 @@ function checkForWin(winArray, playBoardArray) {
                                     gameStatus.winner == player2;
                                     return;
                               }
+                              else if (buffer.length != 3 && 
+                                    gameStatus.winner == null && 
+                                    gameStatus.turns == 8)
+                              {  
+                                    console.log("It's a tie");
+                                    gameStatus.winner == tie;
+                                    return;
+                              }
+
                         }
                   }
 
@@ -118,19 +134,19 @@ function checkForWin(winArray, playBoardArray) {
       return;
 };
 
-
-
-// gameStarts();            // Set up the game
-// gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
-// botMoveMod();            // It's bot's turn: bot choose a square
-// updateGameboardMod();    // Update and display choice on gameboard
-// renderMod();             // Roles the play
-// resultMod();             // Check current play and compare to winPossibilities, 
-//                               // gives result (player win or tie), popup appears and offer to restart
-// restartMod();            // Restart the game
-
+function restartMod() {
+      const square = document.querySelectorAll('.square');
+      square.textContent == "";
+};
 
 })();
+
+
+
+
+
+
+
 
 
 
@@ -139,12 +155,3 @@ function checkForWin(winArray, playBoardArray) {
 // gameplaySelectionMod();  // User choose between 1VBot or 1V1
 // markerSelectionMod()     // Player 1 choose a sign between X and 0;
 // currentPlayerMod();      // Checks which player is playing now (Player 1 or Player 2, Player 1 or Bot)
-
-
-
-
-
-// // Game setup
-// let boardArray = [];
-// let winner = null;
-
