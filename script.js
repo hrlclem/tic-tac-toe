@@ -74,7 +74,7 @@ const playerMove = (() => {
                   }
                   else 
                   {
-                     return
+                     return;
                    }
             });
       });
@@ -84,6 +84,8 @@ const playerMove = (() => {
 function checkForWin(winArray, playBoardArray) {
 
       let buffer = [];
+      // console.log("player1 :" + player1.turn);
+      // console.log("player2 :" + player2.turn);
 
       for (i = 0; i < winArray.length; i++) {
             for (k = 0; k < winArray[i].length; k++) {
@@ -93,11 +95,13 @@ function checkForWin(winArray, playBoardArray) {
                               if(buffer.length == 3 && player1.turn == true)
                               {
                                     console.log('Player 1 win');
+                                    gameStatus.winner == player1;
                                     return;
                               } 
-                              else if (buffer.length == 3 && player1.turn == false)
+                              else if (buffer.length == 3 && player2.turn == true)
                               {  
-                                    console.log('Player 2 win');                                   console.log('Player 1 win');
+                                    console.log('Player 2 win'); 
+                                    gameStatus.winner == player2;                                  console.log('Player 1 win');
                                     return;
                               }
                         }
