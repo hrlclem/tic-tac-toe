@@ -72,10 +72,17 @@ const playerMove = (() => {
                               // // Adds turn++;
                               gameStatus.turns++;
                   }
+                  else if (gameStatus.winner == null && 
+                        gameStatus.turns == 8 ) {
+                              // Process for tie
+                              console.log("it's a tie!");
+                  }
                   else 
                   {
                      return;
-                   }
+                  }
+                  console.log("turns: " + gameStatus.turns);
+                  console.log("winner: " + gameStatus.winner);
             });
       });
       return;
@@ -83,7 +90,6 @@ const playerMove = (() => {
 
 
 function checkForWin(winArray, playBoardArray) {
-      
       let buffer = [];
 
       for (i = 0; i < winArray.length; i++) {
