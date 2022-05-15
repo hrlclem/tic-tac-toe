@@ -134,8 +134,6 @@ function checkForWin(winArray, playBoardArray) {
       return;
 };
 
-//     const playBtn = document.getElementById('play-btn');
-//     playBtn.addEventListener('click', gamePlay);
 
 
       const restartBtn = document.getElementsByClassName('.restartBtn')
