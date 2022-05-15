@@ -61,10 +61,10 @@ const playerMove = (() => {
                   // {
 
                   // }
-                  // else 
-                  // {
-                  //    return
-                  //  }
+                  else 
+                  {
+                     return
+                   }
             });
       });
 })();
