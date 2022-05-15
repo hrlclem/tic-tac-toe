@@ -84,7 +84,7 @@ const playerMove = (() => {
 
 
 // Playgame function
-restartMod();
+
 // gameStarts();            // Set up the game
 // gameMoveMod();           // Player select a square, actions occur (render, taken spots, updategameboard display, result...)
 // botMoveMod();            // It's bot's turn: bot choose a square
@@ -134,15 +134,39 @@ function checkForWin(winArray, playBoardArray) {
       return;
 };
 
+    const playBtn = document.getElementById('play-btn');
+    playBtn.addEventListener('click', gamePlay);
+
+    
+      const restartBtn = document.getElementsByClassName('.restartBtn')
+      restartBtn.addEventListener("click", restartMod);
+
 function restartMod() {
       const square = document.querySelectorAll('.square');
-      square.textContent == "";
+      square.forEach(sq => {
+            sq.textContent = "";
+          });
+
+      // reset player 1
+      player1.name = 'player1';
+      player1.maker = 'X';
+      player1.bot = false;
+      player1.turn = true;
+
+      // reset player 1
+      player2.name = 'player2';
+      player2.maker = '0';
+      player2.bot = false;
+      player2.turn = false
+
+      // reset game info
+      gameStatus.turns = 0;
+      gameStatus.boardArray1 = [];
+      gameStatus.boardArray2 = [];
+      gameStatus.winner = null;
 };
 
 })();
-
-
-
 
 
 
