@@ -95,7 +95,7 @@ function checkForWin(winArray, playBoardArray) {
                                     console.log('Player 1 win');
                                     return;
                               } 
-                              else if (buffer.length == 3 && player2.turn == true)
+                              else if (buffer.length == 3 && player1.turn == false)
                               {  
                                     console.log('Player 2 win');                                   console.log('Player 1 win');
                                     return;
