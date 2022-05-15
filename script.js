@@ -90,8 +90,14 @@ function checkForWin(winArray, playBoardArray) {
                   for (j = 0; j < playBoardArray.length; j++) {
                         if (playBoardArray[j] == winArray[i][k]) {
                               buffer.push(playBoardArray[j]);
-                              if(buffer.length == 3 && ){
-                                    console.log('you win');
+                              if(buffer.length == 3 && player1.turn == true)
+                              {
+                                    console.log('Player 1 win');
+                                    return;
+                              } 
+                              else 
+                              {  
+                                    console.log('Player 2 win');                                   console.log('Player 1 win');
                                     return;
                               }
                         }
