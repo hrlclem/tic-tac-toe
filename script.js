@@ -34,7 +34,7 @@ let winPossibilities = [[0, 1, 2],
 
 // Create player for regular game
 const player1 = playerCreation('player1', 'X', false, true);
-const player2 = playerCreation('player2', '0', false, false);
+const player2 = playerCreation('player2', 'O', false, false);
 let tie;
 
 const playerMove = (() => {
@@ -136,8 +136,10 @@ function checkForWin(winArray, playBoardArray) {
 
 
 
-      const restartBtn = document.getElementsByClassName('.restartBtn')
+      const restartBtn = document.querySelector('.restartBtn');
       restartBtn.addEventListener("click", restartMod);
+
+
 
 function restartMod() {
       const square = document.querySelectorAll('.square');
@@ -153,7 +155,7 @@ function restartMod() {
 
       // reset player 1
       player2.name = 'player2';
-      player2.maker = '0';
+      player2.maker = 'O';
       player2.bot = false;
       player2.turn = false
 
