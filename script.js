@@ -95,15 +95,13 @@ function checkForWin(winArray, playBoardArray) {
                               if(buffer.length == 3 && player1.turn == true)
                               {
                                     console.log('Player 1 win');
-                                    gameStatus.winner == "player1";
-                                    console.log(gameStatus.winner)
+                                    gameStatus.winner = "player1";
                                     return gameStatus.winner;
                               } 
                               else if (buffer.length == 3 && player2.turn == true)
                               {  
                                     console.log('Player 2 win'); 
-                                    gameStatus.winner == "player2";
-                                    console.log(gameStatus.winner)
+                                    gameStatus.winner = "player2";
                                     return gameStatus.winner;
                               }
                               else if (buffer.length != 3 && 
@@ -111,8 +109,7 @@ function checkForWin(winArray, playBoardArray) {
                                     gameStatus.turns == 8)
                               {  
                                     console.log("It's a tie");
-                                    gameStatus.winner == "tie";
-                                    console.log(gameStatus.winner)
+                                    gameStatus.winner = "tie";
                                     return gameStatus.winner;
                               }
 
