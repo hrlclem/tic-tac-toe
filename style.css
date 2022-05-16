@@ -163,13 +163,11 @@ body{
 	display:inline-block;
 	color:#ffffff;
     font-family: 'Exo', sans-serif;
-	font-size:4em;
+	font-size:3em;
 	font-weight:bold;
-	padding: 20px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #122c91;
-    margin-left: 20px;
-    margin-right: 20px;
+    width:160px;
 }
 .selectBtn:hover {
 	background:linear-gradient(to bottom, #193dcc 5%, #122c91 100%);
@@ -272,7 +270,10 @@ body{
     margin-left: auto;
     margin-right: auto;
     font-family: 'Exo', sans-serif;
-    color:#122c91;
+    box-shadow: 0px 10px 14px -7px #122c91;
+	background:linear-gradient(to bottom, #48d6d2 5%, #5a91e9 100%);
+	background-color:#1d65da;
+    color:white;
     font-size: 1.5em;
     margin-top: 40px;
     border-radius: 5px;
@@ -280,11 +281,10 @@ body{
     padding-top: 8px;
     padding-bottom: 8px;
     width:400px;
-    background-color: #48d6d2;
 }
 .restartBtn:hover{
-    background-color: #31c0bb;
-    font-size: 1.5em;
+	background:linear-gradient(to bottom, #193dcc 5%, #122c91 100%);
+	background-color:#122c91;
 }
 .restartBtn:active {
 	position:relative;
