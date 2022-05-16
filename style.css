@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@700;800&display=swap');
+
 * {
     margin:0;
     padding:0;
@@ -12,7 +14,9 @@ body{
 
 /* --- HEADER --- */
 .header{
+    display:none;
     font-size: 20px;
+    font-family: 'Exo', sans-serif;
     width:100%;
     padding: 10px 0px 10px 80px;
     font-size: 40px;
@@ -40,6 +44,8 @@ body{
 }
 .startTxt{
     display: flex;
+    font-family: 'Exo', sans-serif;
+    font-size: 3em;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
@@ -47,6 +53,8 @@ body{
 .startBtn{
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Exo', sans-serif;
+    font-size: 2em;
     padding: 5px 20px 5px 20px;
     cursor:pointer;
 }
