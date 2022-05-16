@@ -49,8 +49,6 @@ const playerMove = (() => {
                               e.target.textContent == "" ) {
                                     // Update board Array
                                     gameStatus.boardArray1.push(Number(e.target.id));
-                                    // Check for winning move
-                                    checkForWin(winPossibilities, gameStatus.boardArray1);
                                     // Change DOM
                                     e.target.textContent = player1.marker;
                                     // // Change player's turn
@@ -59,6 +57,8 @@ const playerMove = (() => {
                                     playersTurn();
                                     // // Adds turn++;
                                     gameStatus.turns++;
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray1);
                         }
                         // For player 2 move
                         else if (player2.turn == true && 
@@ -67,8 +67,6 @@ const playerMove = (() => {
                               player2.bot == false) {
                                     // Update board Array
                                     gameStatus.boardArray2.push(Number(e.target.id));
-                                    // Check for winning move
-                                    checkForWin(winPossibilities, gameStatus.boardArray2);
                                     // Change DOM
                                     e.target.textContent = player2.marker;
                                     // // Change player's turn
@@ -77,6 +75,8 @@ const playerMove = (() => {
                                     playersTurn();
                                     // // Adds turn++;
                                     gameStatus.turns++;
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray2);      
                         }
                         else 
                         {
@@ -115,25 +115,25 @@ function checkForWin(winArray, playBoardArray) {
                   for (j = 0; j < playBoardArray.length; j++) {
                         if (playBoardArray[j] == winArray[i][k]) {
                               buffer.push(playBoardArray[j]);
+                              // Player 1 wins
                               if(buffer.length == 3 && player1.turn == true)
                               {
-                                    console.log('Player 1 win');
                                     gameStatus.winner = "player1";
                                     displayWinner();
                                     return gameStatus.winner;
                               } 
+                              // Player 2 wins
                               else if (buffer.length == 3 && player2.turn == true)
                               {  
-                                    console.log('Player 2 win'); 
                                     gameStatus.winner = "player2";
                                     displayWinner();
                                     return gameStatus.winner;
                               }
+                              // It's a tie
                               else if (buffer.length != 3 && 
                                     gameStatus.winner == null && 
                                     gameStatus.turns == 9)
                               {  
-                                    console.log("It's a tie");
                                     gameStatus.winner = "tie";
                                     displayWinner();
                                     return gameStatus.winner;
@@ -250,11 +250,10 @@ function playersTurn() {
 
 
 function displayWinner() {
-
+      boardGame.style.display = 'none';  
       if (gameStatus.winner == 'player1') 
       {
             p1Winner.style.display = 'flex';
-
       }      
       else if (gameStatus.winner == 'player2') 
       {
