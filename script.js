@@ -87,6 +87,26 @@ const playerMove = (() => {
       return;
 })();
 
+
+// TO DOOOOOO
+const botMove = (() => {
+      if (player2.bot == true &&
+      player2.turn == true && 
+      gameStatus.winner == null) 
+      {
+            setTimeout(botNextMove, 800);
+      }
+      return;
+})();
+
+
+// TO DOOOOOO
+function botNextMove(playBoardArray) {
+      console.log("bot move");
+};
+
+
+
 function checkForWin(winArray, playBoardArray) {
       let buffer = [];
 
