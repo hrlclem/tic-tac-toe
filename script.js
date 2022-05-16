@@ -9,8 +9,6 @@ const playerCreation = (name, marker, turn) => {
             turn}
 };
 
-console.log(33)
-
 const gameStatus = (() => {
       let turns = 0;
       let boardArray1 = [];
