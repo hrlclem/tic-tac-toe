@@ -10,41 +10,42 @@
 <body>
     <div class="header">Tic-Tac-Toe</div>
     <div class="gameDisplay">
+        
         <div class="startModal">
             <span class="startTxt">Press to Start</span>
-            <button class="startBtn">START</button>
+            <button class="startBtn">START ></button>
         </div>
+
         <div class="gamemodeSelectionModal">
             <span class="gamemodeTxt">Play against the computer or a friend</span>
             <button class="gamemodeBotBtn">Player1 vs. Bot</button>
             <button class="gamemode1V1Btn">Player1 vs. Player2</button>
         </div>
+
         <div class="markerSelectionModal">
-            <span class="gamemodeTxt">Player 1 select your marker:</span>
+            <span class="markerSelectionTxt">Player 1 select your marker:</span>
             <button class="selectBtn xMarker">X</button>
             <button class="selectBtn oMarker">O</button>
         </div>
-        <span class="selectionText">Select your marker</span>
-            <div class="itemSelection">
-                <button class="selectBtn xMarker">X</button>
-                <button class="selectBtn oMarker">O</button>
+
+        <div class="currentGameModal">
+            <span class="playerTurn">It's player's turn</span>
+            <span class="resultDiv">YOU WIN</span>
+            <div class="boardGame">
+                <div class="TicTacToeField">
+                    <div class="square 0" id="0"></div>
+                    <div class="square 1" id="1"></div>
+                    <div class="square 2" id="2"></div>
+                    <div class="square 3" id="3"></div>
+                    <div class="square 4" id="4"></div>
+                    <div class="square 5" id="5"></div>
+                    <div class="square 6" id="6"></div>
+                    <div class="square 7" id="7"></div>
+                    <div class="square 8" id="8"></div>
+                </div>
             </div>
-        <span class="playerTurn">It's player's turn</span>
-        <span class="resultDiv">YOU WIN</span>
-        <div class="boardGame">
-            <div class="TicTacToeField">
-                <div class="square 0" id="0"></div>
-                <div class="square 1" id="1"></div>
-                <div class="square 2" id="2"></div>
-                <div class="square 3" id="3"></div>
-                <div class="square 4" id="4"></div>
-                <div class="square 5" id="5"></div>
-                <div class="square 6" id="6"></div>
-                <div class="square 7" id="7"></div>
-                <div class="square 8" id="8"></div>
-            </div>
+            <button class="restartBtn">Restart</button>
         </div>
-        <button class="restartBtn">Restart</button>
     </div>
 
     <div class="footer"> Clément Hurel © All rights reserved, 2022</div>

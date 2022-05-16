@@ -5,10 +5,16 @@
     font-family: 'Lato', sans-serif;
 }
 
-.startModal,
 .gamemodeSelectionModal,
-.markerSelectionModal{
-    /* display:none; */
+.markerSelectionModal,
+.currentGameModal{
+    display:none;
+}
+
+.startModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -27,6 +33,7 @@
 .gameDisplay{
     display:block;  
     margin-top: 20px;
+    
 }
 
 .selectionText{
