@@ -63,7 +63,8 @@ const playerMove = (() => {
                         // For player 2 move
                         else if (player2.turn == true && 
                               gameStatus.winner == null && 
-                              e.target.textContent == "" ) {
+                              e.target.textContent == "" &&
+                              player2.bot == false) {
                                     // Update board Array
                                     gameStatus.boardArray2.push(Number(e.target.id));
                                     // Check for winning move
@@ -84,24 +85,23 @@ const playerMove = (() => {
                   }
             });
       });
-      return;
-})();
 
-
-// TO DOOOOOO
-const botMove = (() => {
       if (player2.bot == true &&
-      player2.turn == true && 
-      gameStatus.winner == null) 
-      {
-            setTimeout(botNextMove, 800);
-      }
+            player2.turn == true && 
+            gameStatus.winner == null) 
+            {
+                  botNextMove();
+                  setTimeout(botNextMove, 800);
+            }
+      
       return;
 })();
 
 
+
+
 // TO DOOOOOO
-function botNextMove(playBoardArray) {
+function botNextMove() {
       console.log("bot move");
 };
 
