@@ -199,12 +199,20 @@ body{
     margin:10px;
 }
 
-.playerTurn{
-    display:flex;
+.player1Turn,
+.player2Turn{
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 30px;
     font-size: 1.8em;
+}
+
+.player1Turn{
+    display:flex;
+}
+
+.player2Turn{
+    display:none;
 }
 
 .resultDiv{

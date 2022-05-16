@@ -55,6 +55,7 @@ const playerMove = (() => {
                                     // // Change player's turn
                                     player1.turn = false;
                                     player2.turn = true;
+                                    playersTurn();
                                     // // Adds turn++;
                                     gameStatus.turns++;
                         }
@@ -71,6 +72,7 @@ const playerMove = (() => {
                                     // // Change player's turn
                                     player1.turn = true;
                                     player2.turn = false;
+                                    playersTurn();
                                     // // Adds turn++;
                                     gameStatus.turns++;
                         }
@@ -141,9 +143,8 @@ const PVPBtn = document.querySelector('.gamemode1V1Btn');
 const PVBotBtn = document.querySelector('.gamemodeBotBtn');
 const xMarkerBtn = document.querySelector('.xMarker');
 const oMarkerBtn = document.querySelector('.oMarker');
-
-
-
+const player1Turn = document.querySelector('.player1Turn');
+const player2Turn = document.querySelector('.player2Turn');
 
 
 startBtn.addEventListener("click", startGame);              // Start game
@@ -181,7 +182,8 @@ function xMarkerSelected() {
       markerSelectMod.style.display = 'none';
       gameModal.style.display = 'block';
       header.style.display = 'block';
-      // Player info update X
+      player1.marker = 'X';
+      player2.marker = 'O';
       // Launch game
 };
 
@@ -189,16 +191,24 @@ function oMarkerSelected() {
       markerSelectMod.style.display = 'none';
       gameModal.style.display = 'block';
       header.style.display = 'block';
-      // Player info update
+      player1.marker = 'O';
+      player2.marker = 'X';
       // Launch game
 };
 
+function playersTurn() {
+      if (player1.turn == true) 
+      {
+            player1Turn.style.display = 'flex';
+            player2Turn.style.display = 'none';
 
-
-
-
-
-
+      }
+      else if (player2.turn = true) 
+      {
+            player1Turn.style.display = 'none';
+            player2Turn.style.display = 'flex';
+      }
+};
 
 
 
