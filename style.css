@@ -28,26 +28,67 @@
 /* Start Modal */
 .startModal{
     display: block;
-    position: fixed;
+    position: absolute;
+    text-align: center;
     top: 40%;
     width: 100%;
     height: 100%;
 }
-
 .startTxt{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
 }
-
 .startBtn{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 20px 5px 20px;
+    cursor:pointer;
+}
+
+
+/* Gamemode selection Modal */
+.gamemodeSelectionModal{
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+    height: 100%;
+}
+.gamemodeTxt{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
 }
+.gamemodeBtn{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 20px 5px 20px;
+    cursor:pointer;
+}
 
+/* Marker selection Modal */
+.markerSelectionModal{
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+    height: 100%;
+}
+.markerSelectionTxt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.selectBtn{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 20px 5px 20px;
+    cursor:pointer;
+}
 
 
 /* Game Modal */

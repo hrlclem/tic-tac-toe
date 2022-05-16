@@ -124,6 +124,8 @@ function checkForWin(winArray, playBoardArray) {
 
 
 
+
+
 // DISPLAY GAME
 
 // Set up event listener
@@ -133,15 +135,23 @@ const startMod = document.querySelector('.startModal');
 const gamemodeSelectMod = document.querySelector('.gamemodeSelectionModal');
 const markerSelectMod = document.querySelector('.markerSelectionModal');
 const gameModal = document.querySelector('.currentGameModal');
+const PVPBtn = document.querySelector('.gamemode1V1Btn');
+const PVBotBtn = document.querySelector('.gamemodeBotBtn');
+const xMarkerBtn = document.querySelector('.xMarker');
+const oMarkerBtn = document.querySelector('.oMarker');
 
 
 
 
-// Start game
-startBtn.addEventListener("click", startGame);
 
-// Restart game
-restartBtn.addEventListener("click", restartMod);
+startBtn.addEventListener("click", startGame);              // Start game
+restartBtn.addEventListener("click", restartMod);           // Restart game
+
+PVPBtn.addEventListener("click", PVPMod);                   // Play against friend
+PVBotBtn.addEventListener("click", PVBotMod);               // Play against computer
+
+xMarkerBtn.addEventListener("click", xMarkerSelected);             // Player1 selects X marker
+oMarkerBtn.addEventListener("click", oMarkerSelected);             // Player1 selects O marker
 
 
 
@@ -152,6 +162,41 @@ function startGame() {
       startMod.style.display = 'none';
       gamemodeSelectMod.style.display = 'block';
 };
+
+function PVPMod() {
+      gamemodeSelectMod.style.display = 'none';
+      markerSelectMod.style.display = 'block';
+      // Player info update
+};
+
+function PVBotMod() {
+      gamemodeSelectMod.style.display = 'none';
+      markerSelectMod.style.display = 'block';
+      // Bot info update
+};
+
+function xMarkerSelected() {
+      markerSelectMod.style.display = 'none';
+      gameModal.style.display = 'block';
+      // Player info to X selected
+      // Start game
+};
+
+function oMarkerSelected() {
+      markerSelectMod.style.display = 'none';
+      gameModal.style.display = 'block';
+      // Player info to O selected
+      // Start game
+};
+
+
+
+
+
+
+
+
+
 
 function restartMod() {
       const square = document.querySelectorAll('.square');
