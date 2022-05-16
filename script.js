@@ -98,12 +98,14 @@ function checkForWin(winArray, playBoardArray) {
                               {
                                     console.log('Player 1 win');
                                     gameStatus.winner = "player1";
+                                    displayWinner();
                                     return gameStatus.winner;
                               } 
                               else if (buffer.length == 3 && player2.turn == true)
                               {  
                                     console.log('Player 2 win'); 
                                     gameStatus.winner = "player2";
+                                    displayWinner();
                                     return gameStatus.winner;
                               }
                               else if (buffer.length != 3 && 
@@ -112,6 +114,7 @@ function checkForWin(winArray, playBoardArray) {
                               {  
                                     console.log("It's a tie");
                                     gameStatus.winner = "tie";
+                                    displayWinner();
                                     return gameStatus.winner;
                               }
 
@@ -145,6 +148,11 @@ const xMarkerBtn = document.querySelector('.xMarker');
 const oMarkerBtn = document.querySelector('.oMarker');
 const player1Turn = document.querySelector('.player1Turn');
 const player2Turn = document.querySelector('.player2Turn');
+const boardGame = document.querySelector('.boardGame');
+const p1Winner = document.querySelector('.player1Winner');
+const p2Winner = document.querySelector('.player2Winner');
+const tieWinner = document.querySelector('.tieWinner');
+
 
 
 startBtn.addEventListener("click", startGame);              // Start game
@@ -197,22 +205,57 @@ function oMarkerSelected() {
 };
 
 function playersTurn() {
-      if (player1.turn == true) 
-      {
-            player1Turn.style.display = 'flex';
-            player2Turn.style.display = 'none';
-
-      }
-      else if (player2.turn = true) 
+      if (gameStatus.winner != null) 
       {
             player1Turn.style.display = 'none';
-            player2Turn.style.display = 'flex';
+            player2Turn.style.display = 'none';
+            boardGame.style.display = 'none';    
+      }
+      else {
+            if (player1.turn == true) 
+            {
+                  player1Turn.style.display = 'flex';
+                  player2Turn.style.display = 'none';
+      
+            }
+            else if (player2.turn = true) 
+            {
+                  player1Turn.style.display = 'none';
+                  player2Turn.style.display = 'flex';
+            }
       }
 };
 
 
+function displayWinner() {
+      
+      if (gameStatus.winner == 'player1') 
+      {
+            p1Winner.style.display = 'flex';
+
+      }      
+      else if (gameStatus.winner == 'player2') 
+      {
+            p2Winner.style.display = 'flex';  
+      }
+      else if (gameStatus.winner == 'tie') 
+      {
+            tieWinner.style.display = 'flex';  
+      }
+};
+
 
 function restartMod() {
+
+      // In case of rematch
+      gameModal.style.display = 'block';
+      header.style.display = 'block';
+      boardGame.style.display = 'block';
+      p1Winner.style.display = 'none';   
+      p2Winner.style.display = 'none';   
+      tieWinner.style.display = 'none'; 
+
+      // In case during current game
       const square = document.querySelectorAll('.square');
       square.forEach(sq => {
             sq.textContent = "";
@@ -235,6 +278,8 @@ function restartMod() {
       gameStatus.boardArray1 = [];
       gameStatus.boardArray2 = [];
       gameStatus.winner = null;
+      
+      playersTurn();  
 };
 
 })();

@@ -295,6 +295,21 @@ body{
 	top:1px;
 }
 
+.player1Winner,
+.player2Winner,
+.tieWinner{
+    display:none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 4em;
+    font-family: 'Exo', sans-serif;
+    color:#2a6fdb;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 
 
 
