@@ -36,13 +36,11 @@ let winPossibilities = [[0, 1, 2],
 // Create player for regular game
 const player1 = playerCreation('player1', 'X', false, true);
 const player2 = playerCreation('player2', 'O', false, false);
-let tie;
 
 const playerMove = (() => {
       const square = document.querySelectorAll('.square');
       square.forEach ( square => {
             square.addEventListener("click", e => {
-                  console.log(gameStatus.winner)
                   if(gameStatus.winner == null) {
                         // For player 1 move
                         if (  player1.turn == true && 
@@ -97,13 +95,15 @@ function checkForWin(winArray, playBoardArray) {
                               if(buffer.length == 3 && player1.turn == true)
                               {
                                     console.log('Player 1 win');
-                                    gameStatus.winner == player1;
+                                    gameStatus.winner == "player1";
+                                    console.log(gameStatus.winner)
                                     return gameStatus.winner;
                               } 
                               else if (buffer.length == 3 && player2.turn == true)
                               {  
                                     console.log('Player 2 win'); 
-                                    gameStatus.winner == player2;
+                                    gameStatus.winner == "player2";
+                                    console.log(gameStatus.winner)
                                     return gameStatus.winner;
                               }
                               else if (buffer.length != 3 && 
@@ -111,7 +111,8 @@ function checkForWin(winArray, playBoardArray) {
                                     gameStatus.turns == 8)
                               {  
                                     console.log("It's a tie");
-                                    gameStatus.winner == tie;
+                                    gameStatus.winner == "tie";
+                                    console.log(gameStatus.winner)
                                     return gameStatus.winner;
                               }
 
