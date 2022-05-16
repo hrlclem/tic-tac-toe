@@ -61,6 +61,7 @@ const playerMove = (() => {
                                     playersTurn();
                                     // If Player vs Bot
                                     isBotPlaying();
+
                         }
                         // For player 2 move
                         else if (player2.turn == true && 
@@ -98,6 +99,7 @@ function isBotPlaying() {
             gameStatus.winner == null) 
             {
                   botNextMove(gameStatus.boardArray1, gameStatus.boardArray2);
+
             }
 
       return;
@@ -137,79 +139,40 @@ function botNextMove(boardArray1, boardArray2){
 
 
 function checkForWin(winArray, playBoardArray) {
+      let winMove = 0;
 
       for (i = 0; i < winArray.length; i++) {
-            let winningArray;
-            winningArray = winArray[i].every(element => {
+            let winningArray = winArray[i].every(element => {
                   return playBoardArray.includes(element);
             })
-
-            if (winningArray == true && player1.turn == true)
-            {
-                  console.log("yes");
-                  gameStatus.winner = "player1";
-                  displayWinner();
-                  return gameStatus.winner;
-            } 
-            // Player 2 wins
-            else if (winningArray == true && player2.turn == true)
-            {  
-                  console.log("no");
-                  gameStatus.winner = "player2";
-                  displayWinner();
-                  return gameStatus.winner;
+            if (winningArray == true){
+                  winMove++;
             }
-            // It's a tie
-            else if (winningArray == false && gameStatus.winner == null && gameStatus.turns == 9)
-            {  
-                  console.log("maybe");
-      
-                  gameStatus.winner = "tie";
-                  displayWinner();
-                  return gameStatus.winner;
-            }
-
-            return;
       };
 
+
+      if (winMove > 0 && player1.turn == true)
+      {
+            gameStatus.winner = "player1";
+            displayWinner();
+            return gameStatus.winner;
+      } 
+      // Player 2 wins
+      else if (winMove > 0 && player2.turn == true)
+      {  
+            gameStatus.winner = "player2";
+            displayWinner();
+            return gameStatus.winner;
+      }
+      // It's a tie
+      else if (winMove >= 0 && gameStatus.winner == null && gameStatus.turns == 9)
+      {  
+            gameStatus.winner = "tie";
+            displayWinner();
+            return gameStatus.winner;
+      }
+
       return;
-
-      // let buffer = [];
-
-      // for (i = 0; i < winArray.length; i++) {
-      //       for (k = 0; k < winArray[i].length; k++) {
-      //             for (j = 0; j < playBoardArray.length; j++) {
-      //                   if (playBoardArray[j] == winArray[i][k]) {
-      //                         buffer.push(playBoardArray[j]);
-      //                         console.log(gameStatus.turns + "turns: buffer " + buffer.length);
-      //                         console.log(gameStatus.turns + "turns: winner " + gameStatus.winner);
-      //                         // Player 1 wins
-      //                         if(buffer.length == 3 && player1.turn == true)
-      //                         {
-      //                               gameStatus.winner = "player1";
-      //                               displayWinner();
-      //                               return gameStatus.winner;
-      //                         } 
-      //                         // Player 2 wins
-      //                         else if (buffer.length == 3 && player2.turn == true)
-      //                         {  
-      //                               gameStatus.winner = "player2";
-      //                               displayWinner();
-      //                               return gameStatus.winner;
-      //                         }
-      //                         // It's a tie
-      //                         else if (buffer.length != 3 && gameStatus.winner == null && gameStatus.turns == 9)
-      //                         {  
-      //                               gameStatus.winner = "tie";
-      //                               displayWinner();
-      //                               return gameStatus.winner;
-      //                         }
-      //                   }
-      //             }
-      //       }
-      //       buffer = [];
-      // }
-      // return;
 };
 
 
@@ -278,7 +241,6 @@ function xMarkerSelected() {
       header.style.display = 'block';
       player1.marker = 'X';
       player2.marker = 'O';
-      // Launch game
 };
 
 function oMarkerSelected() {
@@ -287,7 +249,6 @@ function oMarkerSelected() {
       header.style.display = 'block';
       player1.marker = 'O';
       player2.marker = 'X';
-      // Launch game
 };
 
 function playersTurn() {
