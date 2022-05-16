@@ -59,6 +59,9 @@ const playerMove = (() => {
                                     gameStatus.turns++;
                                     // Check for winning move
                                     checkForWin(winPossibilities, gameStatus.boardArray1);
+                        
+                                    // If Player vs Bot
+                                    isBotPlaying();
                         }
                         // For player 2 move
                         else if (player2.turn == true && 
@@ -86,24 +89,28 @@ const playerMove = (() => {
             });
       });
 
-      if (player2.bot == true &&
-            player2.turn == true && 
-            gameStatus.winner == null) 
-            {
-                  botNextMove();
-                  setTimeout(botNextMove, 800);
-            }
+
       
       return;
 })();
 
 
 
+function isBotPlaying() {
+      if (  player2.bot == true &&
+            player2.turn == true && 
+            gameStatus.winner == null) 
+            {
+                  setTimeout(botNextMove(gameStatus.boardArray1, gameStatus.boardArray2), 1000);
+            }
 
-// TO DOOOOOO
-function botNextMove() {
-      console.log("bot move");
+      return;
 };
+
+function botNextMove(boardArray1, boardArray2){
+      console.log(boardArray1)
+      console.log(boardArray2)
+}
 
 
 
@@ -203,9 +210,9 @@ function PVPMod() {
 };
 
 function PVBotMod() {
+      player2.bot = true;
       gamemodeSelectMod.style.display = 'none';
       markerSelectMod.style.display = 'block';
-      player2.bot = true;
 };
 
 function xMarkerSelected() {
@@ -251,6 +258,9 @@ function playersTurn() {
 
 function displayWinner() {
       boardGame.style.display = 'none';  
+      player1Turn.style.display = 'none';
+      player2Turn.style.display = 'none';
+
       if (gameStatus.winner == 'player1') 
       {
             p1Winner.style.display = 'flex';
