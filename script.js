@@ -137,42 +137,79 @@ function botNextMove(boardArray1, boardArray2){
 
 
 function checkForWin(winArray, playBoardArray) {
-      let buffer = [];
 
       for (i = 0; i < winArray.length; i++) {
-            for (k = 0; k < winArray[i].length; k++) {
-                  for (j = 0; j < playBoardArray.length; j++) {
-                        if (playBoardArray[j] == winArray[i][k]) {
-                              buffer.push(playBoardArray[j]);
-                              console.log(gameStatus.turns + " " + buffer.length);
-                              console.log(gameStatus.turns + " " + gameStatus.winner);
-                              // Player 1 wins
-                              if(buffer.length == 3 && player1.turn == true)
-                              {
-                                    gameStatus.winner = "player1";
-                                    displayWinner();
-                                    return gameStatus.winner;
-                              } 
-                              // Player 2 wins
-                              else if (buffer.length == 3 && player2.turn == true)
-                              {  
-                                    gameStatus.winner = "player2";
-                                    displayWinner();
-                                    return gameStatus.winner;
-                              }
-                              // It's a tie
-                              else if (buffer.length != 3 && gameStatus.winner == null && gameStatus.turns == 9)
-                              {  
-                                    gameStatus.winner = "tie";
-                                    displayWinner();
-                                    return gameStatus.winner;
-                              }
-                        }
-                  }
+            let winningArray;
+            winningArray = winArray[i].every(element => {
+                  return playBoardArray.includes(element);
+            })
+
+            if (winningArray == true && player1.turn == true)
+            {
+                  console.log("yes");
+                  gameStatus.winner = "player1";
+                  displayWinner();
+                  return gameStatus.winner;
+            } 
+            // Player 2 wins
+            else if (winningArray == true && player2.turn == true)
+            {  
+                  console.log("no");
+                  gameStatus.winner = "player2";
+                  displayWinner();
+                  return gameStatus.winner;
             }
-            buffer = [];
-      }
+            // It's a tie
+            else if (winningArray == false && gameStatus.winner == null && gameStatus.turns == 9)
+            {  
+                  console.log("maybe");
+      
+                  gameStatus.winner = "tie";
+                  displayWinner();
+                  return gameStatus.winner;
+            }
+
+            return;
+      };
+
       return;
+
+      // let buffer = [];
+
+      // for (i = 0; i < winArray.length; i++) {
+      //       for (k = 0; k < winArray[i].length; k++) {
+      //             for (j = 0; j < playBoardArray.length; j++) {
+      //                   if (playBoardArray[j] == winArray[i][k]) {
+      //                         buffer.push(playBoardArray[j]);
+      //                         console.log(gameStatus.turns + "turns: buffer " + buffer.length);
+      //                         console.log(gameStatus.turns + "turns: winner " + gameStatus.winner);
+      //                         // Player 1 wins
+      //                         if(buffer.length == 3 && player1.turn == true)
+      //                         {
+      //                               gameStatus.winner = "player1";
+      //                               displayWinner();
+      //                               return gameStatus.winner;
+      //                         } 
+      //                         // Player 2 wins
+      //                         else if (buffer.length == 3 && player2.turn == true)
+      //                         {  
+      //                               gameStatus.winner = "player2";
+      //                               displayWinner();
+      //                               return gameStatus.winner;
+      //                         }
+      //                         // It's a tie
+      //                         else if (buffer.length != 3 && gameStatus.winner == null && gameStatus.turns == 9)
+      //                         {  
+      //                               gameStatus.winner = "tie";
+      //                               displayWinner();
+      //                               return gameStatus.winner;
+      //                         }
+      //                   }
+      //             }
+      //       }
+      //       buffer = [];
+      // }
+      // return;
 };
 
 
@@ -311,6 +348,19 @@ function restartMod() {
             player2.bot = false;
             player2.turn = false
       }
+      else {
+            // reset player 1
+            player1.name = 'player1';
+            player1.maker = 'X';
+            player1.bot = false;
+            player1.turn = true;
+
+            // reset player 2
+            player2.name = 'player2';
+            player2.maker = 'O';
+            player2.bot = true;
+            player2.turn = false
+      }
       // In case of rematch
       gameModal.style.display = 'block';
       header.style.display = 'block';
@@ -325,18 +375,6 @@ function restartMod() {
             sq.textContent = "";
           });
 
-      // reset player 1
-      player1.name = 'player1';
-      player1.maker = 'X';
-      player1.bot = false;
-      player1.turn = true;
-
-      // reset player 2
-      player2.name = 'player2';
-      player2.maker = 'O';
-      player2.bot = true;
-      player2.turn = false
-
       // reset game info
       gameStatus.turns = 0;
       gameStatus.boardArray1 = [];
@@ -347,11 +385,3 @@ function restartMod() {
 };
 
 })();
-
-
-
-
-
-// PENDING FEATURES
-// gameplaySelectionMod();  // User choose between 1VBot or 1V1
-// markerSelectionMod()     // Player 1 choose a sign between X and 0;
