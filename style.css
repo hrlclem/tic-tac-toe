@@ -299,8 +299,8 @@ body{
 .player2Winner,
 .tieWinner{
     display:none;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 15%;
+    margin-bottom: 15%;
     font-size: 4em;
     font-family: 'Exo', sans-serif;
     color:#2a6fdb;
