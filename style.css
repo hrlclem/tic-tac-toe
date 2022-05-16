@@ -15,13 +15,14 @@ body{
 /* --- HEADER --- */
 .header{
     display:none;
-    font-size: 20px;
-    font-family: 'Exo', sans-serif;
+    text-align: center;
     width:100%;
-    padding: 10px 0px 10px 80px;
     font-size: 40px;
     color: #122c91;
-    background-color: #81e9e6
+    font-family: 'Exo', sans-serif;
+    font-size: 4em;
+    color:#122c91;
+    margin-top: 10%;
 }
 
 
@@ -184,7 +185,6 @@ body{
 .gameDisplay{
     display:block;  
     margin-top: 20px;
-    
 }
 
 .selectionText{
@@ -225,7 +225,6 @@ body{
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
     padding:0px;
     background-color: #fefcbf;
     width:400px;
@@ -243,6 +242,15 @@ body{
 }
 
 .square{
+    background-color: #1635b3;
+    font-size: 6em;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+.square:hover{
     background-color: #2a6fdb;
     font-size: 6em;
     border-radius: 4px;
@@ -250,6 +258,13 @@ body{
     justify-content: center;
     align-items: center;
 }
+.square:active {
+	position:relative;
+	top:1px;
+}
+
+
+
 
 .restartBtn{
     margin-top: 20px;

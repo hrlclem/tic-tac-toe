@@ -130,6 +130,7 @@ function checkForWin(winArray, playBoardArray) {
 // DISPLAY GAME
 
 // Set up event listener
+const header = document.querySelector('.header');
 const startBtn = document.querySelector('.startBtn');
 const restartBtn = document.querySelector('.restartBtn');
 const startMod = document.querySelector('.startModal');
@@ -179,6 +180,7 @@ function PVBotMod() {
 function xMarkerSelected() {
       markerSelectMod.style.display = 'none';
       gameModal.style.display = 'block';
+      header.style.display = 'block';
       // Player info update X
       // Launch game
 };
@@ -186,6 +188,7 @@ function xMarkerSelected() {
 function oMarkerSelected() {
       markerSelectMod.style.display = 'none';
       gameModal.style.display = 'block';
+      header.style.display = 'block';
       // Player info update
       // Launch game
 };
