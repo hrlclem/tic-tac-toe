@@ -1,5 +1,6 @@
 const gameBoard = (() => {
 
+// GAME PROCESSING
 // Create player
 const playerCreation = (name, marker, bot, turn) => {
       return{ 
@@ -82,9 +83,6 @@ const playerMove = (() => {
       return;
 })();
 
-
-
-
 function checkForWin(winArray, playBoardArray) {
       let buffer = [];
 
@@ -125,8 +123,27 @@ function checkForWin(winArray, playBoardArray) {
 
 
 
+
+// DISPLAY GAME
+
+// Display event listener
+
+// Start game
+const startBtn = document.querySelector('.startBtn');
+startBtn.addEventListener("click", startGame);
+
+// Restart game
 const restartBtn = document.querySelector('.restartBtn');
 restartBtn.addEventListener("click", restartMod);
+
+
+
+
+
+// Display functions
+function startGame() {
+      startBtn.style.
+};
 
 function restartMod() {
       const square = document.querySelectorAll('.square');
