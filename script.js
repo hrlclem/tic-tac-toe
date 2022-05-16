@@ -51,15 +51,14 @@ const playerMove = (() => {
                                     gameStatus.boardArray1.push(Number(e.target.id));
                                     // Change DOM
                                     e.target.textContent = player1.marker;
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray1);
                                     // // Change player's turn
                                     player1.turn = false;
                                     player2.turn = true;
                                     playersTurn();
                                     // // Adds turn++;
                                     gameStatus.turns++;
-                                    // Check for winning move
-                                    checkForWin(winPossibilities, gameStatus.boardArray1);
-                        
                                     // If Player vs Bot
                                     isBotPlaying();
                         }
@@ -72,14 +71,14 @@ const playerMove = (() => {
                                     gameStatus.boardArray2.push(Number(e.target.id));
                                     // Change DOM
                                     e.target.textContent = player2.marker;
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray2);  
                                     // // Change player's turn
                                     player1.turn = true;
                                     player2.turn = false;
                                     playersTurn();
                                     // // Adds turn++;
-                                    gameStatus.turns++;
-                                    // Check for winning move
-                                    checkForWin(winPossibilities, gameStatus.boardArray2);      
+                                    gameStatus.turns++;    
                         }
                         else 
                         {
@@ -101,15 +100,41 @@ function isBotPlaying() {
             player2.turn == true && 
             gameStatus.winner == null) 
             {
-                  setTimeout(botNextMove(gameStatus.boardArray1, gameStatus.boardArray2), 1000);
+                  botNextMove(gameStatus.boardArray1, gameStatus.boardArray2);
             }
 
       return;
 };
 
 function botNextMove(boardArray1, boardArray2){
-      console.log(boardArray1)
-      console.log(boardArray2)
+
+      setTimeout(() => {
+            let emptyBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+            let buffer1 = boardArray1;
+            let buffer2 = boardArray2;
+            let fullBoardArray = buffer1.concat(buffer2);
+      
+            // Search for all possible choices
+            let possibleChoices = emptyBoard.filter(choices => !fullBoardArray.includes(choices));
+      
+            // Select a random square from all possible choices
+            let randomChoice = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
+      
+            // Update board Array
+            gameStatus.boardArray2.push(randomChoice);
+            // Change DOM
+            document.getElementById(randomChoice).textContent = player2.marker;
+            // Check for winning move
+            checkForWin(winPossibilities, gameStatus.boardArray2);   
+            // Change player's turn
+            player1.turn = true;
+            player2.turn = false;
+            playersTurn();
+            // Adds turn++;
+            gameStatus.turns++;
+          }, 
+          "500")
+
 }
 
 
@@ -139,7 +164,7 @@ function checkForWin(winArray, playBoardArray) {
                               // It's a tie
                               else if (buffer.length != 3 && 
                                     gameStatus.winner == null && 
-                                    gameStatus.turns == 9)
+                                    gameStatus.turns == 8)
                               {  
                                     gameStatus.winner = "tie";
                                     displayWinner();
@@ -277,7 +302,20 @@ function displayWinner() {
 
 
 function restartMod() {
+      if ( player2.bot == false) 
+      {
+            // reset player 1
+            player1.name = 'player1';
+            player1.maker = 'X';
+            player1.bot = false;
+            player1.turn = true;
 
+            // reset player 2
+            player2.name = 'player2';
+            player2.maker = 'O';
+            player2.bot = false;
+            player2.turn = false
+      }
       // In case of rematch
       gameModal.style.display = 'block';
       header.style.display = 'block';
@@ -298,10 +336,10 @@ function restartMod() {
       player1.bot = false;
       player1.turn = true;
 
-      // reset player 1
+      // reset player 2
       player2.name = 'player2';
       player2.maker = 'O';
-      player2.bot = false;
+      player2.bot = true;
       player2.turn = false
 
       // reset game info
