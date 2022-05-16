@@ -116,7 +116,7 @@ body{
 	display:inline-block;
 	color:#ffffff;
     font-family: 'Exo', sans-serif;
-	font-size:1em;
+	font-size:1.5em;
 	font-weight:bold;
 	padding:13px 32px;
 	text-decoration:none;
@@ -200,21 +200,19 @@ body{
 }
 
 .playerTurn{
-    /* display:flex; */
-    display:none;
+    display:flex;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin-bottom: 30px;
+    font-size: 1.8em;
 }
 
 .resultDiv{
-    /* display:flex; */
     display:none;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 20px;  
+    margin-bottom: 30px;
+    font-size: 1.8em;  
 }
 
 .boardGame{
@@ -270,7 +268,7 @@ body{
     margin-right: auto;
     font-family: 'Exo', sans-serif;
     box-shadow: 0px 10px 14px -7px #122c91;
-	background:linear-gradient(to bottom, #48c1d6 5%, #5a91e9 100%);
+	background:linear-gradient(to bottom, #48c1d6 5%, #4985e6 100%);
 	background-color:#1d65da;
     color:white;
     font-size: 1.5em;
@@ -282,7 +280,7 @@ body{
     width:400px;
 }
 .restartBtn:hover{
-	background:linear-gradient(to bottom, #3592a3 5%, #122c91 100%);
+	background:linear-gradient(to bottom, #123a91 5%, #3e5fe6 100%);
 	background-color:#122c91;
 }
 .restartBtn:active {
