@@ -38,26 +38,52 @@ body{
     display: block;
     position: absolute;
     text-align: center;
-    top: 40%;
+    top: 22%;
     width: 100%;
     height: 100%;
+}
+.titleStartTxt{
+    font-family: 'Exo', sans-serif;
+    font-size: 4em;
+    color:#122c91;
+    margin-bottom: 60px;
 }
 .startTxt{
     display: flex;
     font-family: 'Exo', sans-serif;
-    font-size: 3em;
+    color:#2a6fdb;
+    font-size: 2em;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+    margin-top: 30px;
 }
-.startBtn{
+.startBtn {
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Exo', sans-serif;
-    font-size: 2em;
-    padding: 5px 20px 5px 20px;
     cursor:pointer;
+	box-shadow: 0px 10px 14px -7px #122c91;
+	background:linear-gradient(to bottom, #1568ee 5%, #5a91e9 100%);
+	background-color:#1d65da;
+	border-radius:8px;
+	display:inline-block;
+	color:#ffffff;
+    font-family: 'Exo', sans-serif;
+	font-size:2em;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #122c91;
 }
+.startBtn:hover {
+	background:linear-gradient(to bottom, #193dcc 5%, #122c91 100%);
+	background-color:#122c91;
+}
+.startBtn:active {
+	position:relative;
+	top:1px;
+}
+
 
 
 /* Gamemode selection Modal */
@@ -70,15 +96,40 @@ body{
 }
 .gamemodeTxt{
     display: flex;
+    font-family: 'Exo', sans-serif;
+    color:#122c91;
+    font-size: 2em;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
-.gamemodeBtn{
+.gamemodeBtn {
     margin-left: auto;
     margin-right: auto;
-    padding: 5px 20px 5px 20px;
     cursor:pointer;
+	box-shadow: 0px 10px 14px -7px #122c91;
+	background:linear-gradient(to bottom, #1568ee 5%, #5a91e9 100%);
+	background-color:#1d65da;
+	border-radius:8px;
+	display:inline-block;
+	color:#ffffff;
+    font-family: 'Exo', sans-serif;
+	font-size:1em;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #122c91;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.gamemodeBtn:hover {
+	background:linear-gradient(to bottom, #193dcc 5%, #122c91 100%);
+	background-color:#122c91;
+}
+.gamemodeBtn:active {
+	position:relative;
+	top:1px;
 }
 
 /* Marker selection Modal */
