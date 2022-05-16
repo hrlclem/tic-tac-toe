@@ -51,14 +51,14 @@ const playerMove = (() => {
                                     gameStatus.boardArray1.push(Number(e.target.id));
                                     // Change DOM
                                     e.target.textContent = player1.marker;
+                                    // // Adds turn++;
+                                    gameStatus.turns++;
                                     // Check for winning move
                                     checkForWin(winPossibilities, gameStatus.boardArray1);
                                     // // Change player's turn
                                     player1.turn = false;
                                     player2.turn = true;
                                     playersTurn();
-                                    // // Adds turn++;
-                                    gameStatus.turns++;
                                     // If Player vs Bot
                                     isBotPlaying();
                         }
@@ -71,14 +71,14 @@ const playerMove = (() => {
                                     gameStatus.boardArray2.push(Number(e.target.id));
                                     // Change DOM
                                     e.target.textContent = player2.marker;
+                                    // // Adds turn++;
+                                    gameStatus.turns++;
                                     // Check for winning move
                                     checkForWin(winPossibilities, gameStatus.boardArray2);  
                                     // // Change player's turn
                                     player1.turn = true;
                                     player2.turn = false;
                                     playersTurn();
-                                    // // Adds turn++;
-                                    gameStatus.turns++;    
                         }
                         else 
                         {
@@ -87,9 +87,6 @@ const playerMove = (() => {
                   }
             });
       });
-
-
-      
       return;
 })();
 
@@ -124,14 +121,14 @@ function botNextMove(boardArray1, boardArray2){
             gameStatus.boardArray2.push(randomChoice);
             // Change DOM
             document.getElementById(randomChoice).textContent = player2.marker;
+            // Adds turn++;
+            gameStatus.turns++;
             // Check for winning move
             checkForWin(winPossibilities, gameStatus.boardArray2);   
             // Change player's turn
             player1.turn = true;
             player2.turn = false;
             playersTurn();
-            // Adds turn++;
-            gameStatus.turns++;
           }, 
           "500")
 
@@ -147,6 +144,8 @@ function checkForWin(winArray, playBoardArray) {
                   for (j = 0; j < playBoardArray.length; j++) {
                         if (playBoardArray[j] == winArray[i][k]) {
                               buffer.push(playBoardArray[j]);
+                              console.log(gameStatus.turns + " " + buffer.length);
+                              console.log(gameStatus.turns + " " + gameStatus.winner);
                               // Player 1 wins
                               if(buffer.length == 3 && player1.turn == true)
                               {
@@ -162,18 +161,14 @@ function checkForWin(winArray, playBoardArray) {
                                     return gameStatus.winner;
                               }
                               // It's a tie
-                              else if (buffer.length != 3 && 
-                                    gameStatus.winner == null && 
-                                    gameStatus.turns == 8)
+                              else if (buffer.length != 3 && gameStatus.winner == null && gameStatus.turns == 9)
                               {  
                                     gameStatus.winner = "tie";
                                     displayWinner();
                                     return gameStatus.winner;
                               }
-
                         }
                   }
-
             }
             buffer = [];
       }
