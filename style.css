@@ -65,7 +65,7 @@ body{
     cursor:pointer;
     border:0;
 	box-shadow: 0px 10px 14px -7px #122c91;
-	background:linear-gradient(to bottom, #1568ee 5%, #5a91e9 100%);
+	background:linear-gradient(to bottom, #1156c5 5%, #5a91e9 100%);
 	background-color:#1d65da;
 	border-radius:8px;
 	display:inline-block;
@@ -103,16 +103,14 @@ body{
     font-size: 2em;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     margin-top: 30px;
 }
 .gamemodeBtn {
-    margin-left: auto;
-    margin-right: auto;
     cursor:pointer;
     border:0;
 	box-shadow: 0px 10px 14px -7px #122c91;
-	background:linear-gradient(to bottom, #1568ee 5%, #5a91e9 100%);
+	background:linear-gradient(to bottom, #1156c5 5%, #5a91e9 100%);
 	background-color:#1d65da;
 	border-radius:8px;
 	display:inline-block;
@@ -156,7 +154,7 @@ body{
 .selectBtn{
     cursor:pointer;
 	box-shadow: 0px 10px 14px -7px #122c91;
-	background:linear-gradient(to bottom, #1568ee 5%, #5a91e9 100%);
+	background:linear-gradient(to bottom, #1156c5 5%, #5a91e9 100%);
 	background-color:#1d65da;
 	border-radius:8px;
     border:0;
@@ -247,6 +245,7 @@ body{
     justify-content: center;
     align-items: center;
     color:white;
+    box-shadow: 0px 10px 14px -7px #122c91;
 }
 .square:hover{
     background-color: #2a6fdb;
@@ -271,11 +270,11 @@ body{
     margin-right: auto;
     font-family: 'Exo', sans-serif;
     box-shadow: 0px 10px 14px -7px #122c91;
-	background:linear-gradient(to bottom, #48d6d2 5%, #5a91e9 100%);
+	background:linear-gradient(to bottom, #48c1d6 5%, #5a91e9 100%);
 	background-color:#1d65da;
     color:white;
     font-size: 1.5em;
-    margin-top: 40px;
+    margin-top: 60px;
     border-radius: 5px;
     border: 0;
     padding-top: 8px;
@@ -283,7 +282,7 @@ body{
     width:400px;
 }
 .restartBtn:hover{
-	background:linear-gradient(to bottom, #193dcc 5%, #122c91 100%);
+	background:linear-gradient(to bottom, #3592a3 5%, #122c91 100%);
 	background-color:#122c91;
 }
 .restartBtn:active {
