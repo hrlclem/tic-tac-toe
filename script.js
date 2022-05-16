@@ -42,41 +42,44 @@ const playerMove = (() => {
       const square = document.querySelectorAll('.square');
       square.forEach ( square => {
             square.addEventListener("click", e => {
-                  // For player 1 move
-                  if (  player1.turn == true && 
-                        gameStatus.winner == null && 
-                        e.target.textContent == "" ) {
-                              // Update board Array
-                              gameStatus.boardArray1.push(Number(e.target.id));
-                              // Check for winning move
-                              checkForWin(winPossibilities, gameStatus.boardArray1);
-                              // Change DOM
-                              e.target.textContent = player1.marker;
-                              // // Change player's turn
-                              player1.turn = false;
-                              player2.turn = true;
-                              // // Adds turn++;
-                              gameStatus.turns++;
-                  }
-                  // For player 2 move
-                  else if (player2.turn == true && 
-                        gameStatus.winner == null && 
-                        e.target.textContent == "" ) {
-                              // Update board Array
-                              gameStatus.boardArray2.push(Number(e.target.id));
-                              // Check for winning move
-                              checkForWin(winPossibilities, gameStatus.boardArray2);
-                              // Change DOM
-                              e.target.textContent = player2.marker;
-                              // // Change player's turn
-                              player1.turn = true;
-                              player2.turn = false;
-                              // // Adds turn++;
-                              gameStatus.turns++;
-                  }
-                  else 
-                  {
-                     return;
+                  console.log(gameStatus.winner)
+                  if(gameStatus.winner == null) {
+                        // For player 1 move
+                        if (  player1.turn == true && 
+                              gameStatus.winner == null && 
+                              e.target.textContent == "" ) {
+                                    // Update board Array
+                                    gameStatus.boardArray1.push(Number(e.target.id));
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray1);
+                                    // Change DOM
+                                    e.target.textContent = player1.marker;
+                                    // // Change player's turn
+                                    player1.turn = false;
+                                    player2.turn = true;
+                                    // // Adds turn++;
+                                    gameStatus.turns++;
+                        }
+                        // For player 2 move
+                        else if (player2.turn == true && 
+                              gameStatus.winner == null && 
+                              e.target.textContent == "" ) {
+                                    // Update board Array
+                                    gameStatus.boardArray2.push(Number(e.target.id));
+                                    // Check for winning move
+                                    checkForWin(winPossibilities, gameStatus.boardArray2);
+                                    // Change DOM
+                                    e.target.textContent = player2.marker;
+                                    // // Change player's turn
+                                    player1.turn = true;
+                                    player2.turn = false;
+                                    // // Adds turn++;
+                                    gameStatus.turns++;
+                        }
+                        else 
+                        {
+                        return;
+                        }
                   }
             });
       });
@@ -95,13 +98,13 @@ function checkForWin(winArray, playBoardArray) {
                               {
                                     console.log('Player 1 win');
                                     gameStatus.winner == player1;
-                                    return;
+                                    return gameStatus.winner;
                               } 
                               else if (buffer.length == 3 && player2.turn == true)
                               {  
                                     console.log('Player 2 win'); 
                                     gameStatus.winner == player2;
-                                    return;
+                                    return gameStatus.winner;
                               }
                               else if (buffer.length != 3 && 
                                     gameStatus.winner == null && 
@@ -109,7 +112,7 @@ function checkForWin(winArray, playBoardArray) {
                               {  
                                     console.log("It's a tie");
                                     gameStatus.winner == tie;
-                                    return;
+                                    return gameStatus.winner;
                               }
 
                         }
@@ -150,8 +153,8 @@ restartBtn.addEventListener("click", restartMod);           // Restart game
 PVPBtn.addEventListener("click", PVPMod);                   // Play against friend
 PVBotBtn.addEventListener("click", PVBotMod);               // Play against computer
 
-xMarkerBtn.addEventListener("click", xMarkerSelected);             // Player1 selects X marker
-oMarkerBtn.addEventListener("click", oMarkerSelected);             // Player1 selects O marker
+xMarkerBtn.addEventListener("click", xMarkerSelected);      // Player1 selects X marker
+oMarkerBtn.addEventListener("click", oMarkerSelected);      // Player1 selects O marker
 
 
 
@@ -178,15 +181,15 @@ function PVBotMod() {
 function xMarkerSelected() {
       markerSelectMod.style.display = 'none';
       gameModal.style.display = 'block';
-      // Player info to X selected
-      // Start game
+      // Player info update X
+      // Launch game
 };
 
 function oMarkerSelected() {
       markerSelectMod.style.display = 'none';
       gameModal.style.display = 'block';
-      // Player info to O selected
-      // Start game
+      // Player info update
+      // Launch game
 };
 
 
