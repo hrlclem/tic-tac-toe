@@ -5,16 +5,9 @@
     font-family: 'Lato', sans-serif;
 }
 
-.gamemodeSelectionModal,
-.markerSelectionModal,
-.currentGameModal{
-    display:none;
-}
-
-.startModal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+    width:100%;
+    height:100%;
 }
 
 
@@ -29,7 +22,31 @@
 }
 
 
+
+
+
+/* Start Modal */
+.startModal{
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.startTxt,
+.startBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* MAIN */
+.gamemodeSelectionModal,
+.markerSelectionModal,
+.currentGameModal{
+    display:none;
+}
+
+
 .gameDisplay{
     display:block;  
     margin-top: 20px;

@@ -126,14 +126,21 @@ function checkForWin(winArray, playBoardArray) {
 
 // DISPLAY GAME
 
-// Display event listener
+// Set up event listener
+const startBtn = document.querySelector('.startBtn');
+const restartBtn = document.querySelector('.restartBtn');
+const startMod = document.querySelector('.startModal');
+const gamemodeSelectMod = document.querySelector('.gamemodeSelectionModal');
+const markerSelectMod = document.querySelector('.markerSelectionModal');
+const gameModal = document.querySelector('.currentGameModal');
+
+
+
 
 // Start game
-const startBtn = document.querySelector('.startBtn');
 startBtn.addEventListener("click", startGame);
 
 // Restart game
-const restartBtn = document.querySelector('.restartBtn');
 restartBtn.addEventListener("click", restartMod);
 
 
@@ -142,7 +149,8 @@ restartBtn.addEventListener("click", restartMod);
 
 // Display functions
 function startGame() {
-      startBtn.style.
+      startMod.style.display = 'none';
+      gamemodeSelectMod.style.display = 'block';
 };
 
 function restartMod() {
