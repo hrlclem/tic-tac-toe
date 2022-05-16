@@ -2,10 +2,11 @@ const gameBoard = (() => {
 
 // GAME PROCESSING
 // Create player
-const playerCreation = (name, marker, turn) => {
+const playerCreation = (name, marker, bot, turn) => {
       return{ 
             name, 
             marker, 
+            bot, 
             turn}
 };
 
@@ -33,9 +34,8 @@ let winPossibilities = [[0, 1, 2],
                         [2, 4, 6]];
 
 // Create player for regular game
-const player1 = playerCreation('player1', 'X', true);
-const player2 = playerCreation('player2', 'O', false);
-const bot = playerCreation('bot', 'O', false);
+const player1 = playerCreation('player1', 'X', false, true);
+const player2 = playerCreation('player2', 'O', false, false);
 
 
 const playerMove = (() => {
@@ -178,12 +178,14 @@ function startGame() {
 function PVPMod() {
       gamemodeSelectMod.style.display = 'none';
       markerSelectMod.style.display = 'block';
+      player2.bot = false;
+
 };
 
 function PVBotMod() {
       gamemodeSelectMod.style.display = 'none';
       markerSelectMod.style.display = 'block';
-      // Bot info update
+      player2.bot = true;
 };
 
 function xMarkerSelected() {
