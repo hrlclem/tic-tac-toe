@@ -171,7 +171,6 @@ function checkForWin(winArray, playBoardArray) {
             displayWinner();
             return gameStatus.winner;
       }
-
       return;
 };
 
