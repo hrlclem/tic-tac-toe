@@ -167,7 +167,7 @@ function checkForWin(winArray, playBoardArray) {
       // It's a tie
       else if (winMove >= 0 && gameStatus.winner == null && gameStatus.turns == 9)
       {  
-            gameStatus.winner = "tie";
+            gameStatus.winner = "bob";
             displayWinner();
             return gameStatus.winner;
       }
