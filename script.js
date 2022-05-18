@@ -145,7 +145,7 @@ function checkForWin(winArray, playBoardArray) {
             let winningArray = winArray[i].every(element => {
                   return playBoardArray.includes(element);
             })
-            if (winningArray == true){
+            if (winningArray == false){
                   winMove++;
             }
       };
