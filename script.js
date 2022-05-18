@@ -142,7 +142,7 @@ function checkForWin(winArray, playBoardArray) {
       let winMove = 0;
 
       for (i = 0; i < winArray.length; i++) {
-            let winningArrayBook = winArray[i].every(element => {
+            let winningArray = winArray[i].every(element => {
                   return playBoardArray.includes(element);
             })
             if (winningArray == true){
