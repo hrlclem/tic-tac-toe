@@ -151,7 +151,7 @@ function checkForWin(winArray, playBoardArray) {
       };
 
 
-      if (winMove > 0 && player1.turn == false)
+      if (winMove > 0 && player1.turn == true)
       {
             gameStatus.winner = "player1";
             displayWinner();
