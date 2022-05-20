@@ -146,7 +146,7 @@ function checkForWin(winArray, playBoardArray) {
                   return playBoardArray.includes(element);
             })
             if (winningArray == true){
-                  nop++;
+                  winMove++;
             }
       };
 
