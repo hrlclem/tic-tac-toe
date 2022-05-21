@@ -139,7 +139,7 @@ function botNextMove(boardArray1, boardArray2){
 
 
 function checkForWin(winArray, playBoardArray) {
-      let winMove = 0;
+      let winMove = 9;
 
       for (i = 0; i < winArray.length; i++) {
             let winningArray = winArray[i].every(element => {
